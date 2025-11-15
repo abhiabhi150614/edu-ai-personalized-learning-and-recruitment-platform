@@ -37,108 +37,8 @@
 
 ---
 
-## 🌟 Platform Overview
+## AI FEATURES AND GEN AI AGENT INTEGRATION
 
-EduAI is a comprehensive dual-user ecosystem that revolutionizes both learning and recruitment through advanced AI integration:
-
-- **For Students**: AI-generated personalized learning paths with 30-day monthly structures, adaptive quizzes, voice tutoring, and automated progress tracking
-- **For Recruiters**: Intelligent candidate matching, AI-powered email analysis, automated interview scheduling, and comprehensive talent analytics
-
-**43 React Components** | **11 Backend Modules** | **15 Database Models** | **8 OAuth Integrations**
-
-### 📊 Platform Scale Overview - The Complete Ecosystem
-
-```mermaid
-%%{init: {'theme':'default', 'themeVariables': {
-  'primaryColor': '#ffffff',
-  'primaryBorderColor': '#4361ee',
-  'primaryTextColor': '#000000',
-  'lineColor': '#4361ee',
-  'clusterBkg': '#f8f9fa',
-  'clusterBorder': '#dee2e6',
-  'nodeBorder': '#4361ee',
-  'nodeBkg': '#ffffff',
-  'textColor': '#000000'
-}}}%%
-mindmap
-  root((🌌 EduAI Platform<br/>26,571 Lines | 127 Files))
-    🎨 Frontend (43 Components)
-      👨🎓 Student Platform
-        🔐 Auth & Onboarding
-        📊 Learning Dashboard
-        🤖 AI Chatbot
-        🎙️ Voice Tutor
-        ❓ Quiz System
-      💼 Recruiter Platform
-        📈 Analytics Dashboard
-        👥 Candidate Management
-        💼 Job Postings
-        📧 Email Analysis
-    ⚡ Backend (17 Services)
-      🔥 FastAPI Server
-        🌐 59 Endpoints
-        🔐 JWT Auth
-      🎙️ Flask Voice
-        📞 Twilio
-        🎤 Speech
-      ☁️ Core Services
-        🧠 AI Services
-        🔑 OAuth
-        📞 Communication
-    🤖 AI Intelligence (4 Models)
-      🟢 Gemini 2.0 Flash
-        📈 95% Traffic
-        ⚡ <500ms
-      🔄 Fallback Models
-        🔵 1.5 Flash
-        🟠 1.5 Pro
-        🟣 Pro
-      🔧 Tools (8)
-        📁 Drive
-        📺 YouTube
-        📞 Voice
-    🔐 OAuth (8 Services)
-      🟣 Hybrid System
-        ✅ 99.8% Uptime
-      🌐 Integrations
-        📧 Gmail
-        📁 Drive
-        🗓️ Calendar
-        📺 YouTube
-    🗄️ Database (16 Tables)
-      📊 Structure
-        👥 Users
-        🎓 Learning
-        💼 Recruiter
-        🧠 AI
-      ⚡ Performance
-        📋 165 Columns
-        ⚡ 12ms Query
-    ⚙️ Background Workers
-      🐙 GitHub
-        📁 Repos
-        📝 Commits
-      📨 Email
-        🔔 Notifications
-        📊 Queue
-      📈 Analytics
-        📊 Tracking
-        📏 Metrics
-    📊 Performance
-      ⚡ Speed
-        🔐 150ms Auth
-        🎓 280ms Learn
-        🤖 450ms Chat
-      🎯 Scale
-        👥 1K+ Users
-        📈 2.5K+ Req/s
-        🔍 10K+ Q/min
-      ✅ Quality
-        ✅ 99.8% Uptime
-        🧪 83% Tests
-        ⭐ 8.1/10 Code
-
-```
 
 
 ```mermaid
@@ -312,6 +212,110 @@ flowchart LR
 
 
 ```
+
+## 🌟 Platform Overview
+
+EduAI is a comprehensive dual-user ecosystem that revolutionizes both learning and recruitment through advanced AI integration:
+
+- **For Students**: AI-generated personalized learning paths with 30-day monthly structures, adaptive quizzes, voice tutoring, and automated progress tracking
+- **For Recruiters**: Intelligent candidate matching, AI-powered email analysis, automated interview scheduling, and comprehensive talent analytics
+
+**43 React Components** | **11 Backend Modules** | **15 Database Models** | **8 OAuth Integrations**
+
+### 📊 Platform Scale Overview - The Complete Ecosystem
+
+```mermaid
+%%{init: {'theme':'default', 'themeVariables': {
+  'primaryColor': '#ffffff',
+  'primaryBorderColor': '#4361ee',
+  'primaryTextColor': '#000000',
+  'lineColor': '#4361ee',
+  'clusterBkg': '#f8f9fa',
+  'clusterBorder': '#dee2e6',
+  'nodeBorder': '#4361ee',
+  'nodeBkg': '#ffffff',
+  'textColor': '#000000'
+}}}%%
+mindmap
+  root((🌌 EduAI Platform<br/>26,571 Lines | 127 Files))
+    🎨 Frontend (43 Components)
+      👨🎓 Student Platform
+        🔐 Auth & Onboarding
+        📊 Learning Dashboard
+        🤖 AI Chatbot
+        🎙️ Voice Tutor
+        ❓ Quiz System
+      💼 Recruiter Platform
+        📈 Analytics Dashboard
+        👥 Candidate Management
+        💼 Job Postings
+        📧 Email Analysis
+    ⚡ Backend (17 Services)
+      🔥 FastAPI Server
+        🌐 59 Endpoints
+        🔐 JWT Auth
+      🎙️ Flask Voice
+        📞 Twilio
+        🎤 Speech
+      ☁️ Core Services
+        🧠 AI Services
+        🔑 OAuth
+        📞 Communication
+    🤖 AI Intelligence (4 Models)
+      🟢 Gemini 2.0 Flash
+        📈 95% Traffic
+        ⚡ <500ms
+      🔄 Fallback Models
+        🔵 1.5 Flash
+        🟠 1.5 Pro
+        🟣 Pro
+      🔧 Tools (8)
+        📁 Drive
+        📺 YouTube
+        📞 Voice
+    🔐 OAuth (8 Services)
+      🟣 Hybrid System
+        ✅ 99.8% Uptime
+      🌐 Integrations
+        📧 Gmail
+        📁 Drive
+        🗓️ Calendar
+        📺 YouTube
+    🗄️ Database (16 Tables)
+      📊 Structure
+        👥 Users
+        🎓 Learning
+        💼 Recruiter
+        🧠 AI
+      ⚡ Performance
+        📋 165 Columns
+        ⚡ 12ms Query
+    ⚙️ Background Workers
+      🐙 GitHub
+        📁 Repos
+        📝 Commits
+      📨 Email
+        🔔 Notifications
+        📊 Queue
+      📈 Analytics
+        📊 Tracking
+        📏 Metrics
+    📊 Performance
+      ⚡ Speed
+        🔐 150ms Auth
+        🎓 280ms Learn
+        🤖 450ms Chat
+      🎯 Scale
+        👥 1K+ Users
+        📈 2.5K+ Req/s
+        🔍 10K+ Q/min
+      ✅ Quality
+        ✅ 99.8% Uptime
+        🧪 83% Tests
+        ⭐ 8.1/10 Code
+
+```
+
 
 ## 🏛️ System Architecture
 
