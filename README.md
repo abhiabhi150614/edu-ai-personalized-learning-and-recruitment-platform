@@ -139,15 +139,14 @@ mindmap
         ⭐ 8.1/10 Code
 
 ```
-
-```mermaid
 flowchart LR
+
     %% ------------------ MODEL FAILOVER ------------------
-    subgraph MODEL_LAYER [Model Selection & Failover]
-        OPENAI[OpenAI API (Primary)]
-        OPENAI_FAIL{OpenAI Failure?}
-        GEMINI[Gemini 2.0 Flash (Fallback)\nGemini 1.5 / 1.5 Pro / Pro]
-        
+    subgraph MODEL_LAYER Model Selection and Failover
+        OPENAI[OpenAI API Primary]
+        OPENAI_FAIL{OpenAI Failure}
+        GEMINI[Gemini Flash Series Fallback]
+
         OPENAI -->|Success| CORE
         OPENAI -.->|Error| OPENAI_FAIL
         OPENAI_FAIL --> GEMINI
@@ -155,10 +154,10 @@ flowchart LR
     end
 
     %% ------------------ CORE HUB ------------------
-    CORE((EDUAI AI Intelligence Hub))
+    CORE((EDUAI AI Hub))
 
     %% ------------------ LEARNING AGENTS ------------------
-    subgraph LEARNING_AGENTS [Learning AI Agents]
+    subgraph LEARNING_AGENTS Learning AI Agents
         CHAT_AI[AI Chat Agent]
         LEARN_AI[AI Learning Agent]
         SUBPLAN_AI[AI Subplan Agent]
@@ -180,17 +179,17 @@ flowchart LR
     CORE --> CONTEXT_ENGINE
     CORE --> PLANNING_AI
 
-    %% ------------------ CALL & VOICE AGENTS ------------------
-    subgraph CALL_AGENTS [Voice & Call AI]
-        VOICE_AI[AI Voice Agent (Twilio)]
+    %% ------------------ CALL AND VOICE ------------------
+    subgraph CALL_AGENTS Voice and Call AI
+        VOICE_AI[AI Voice Agent Twilio]
         CALL_AI[AI Call Agent]
     end
 
     CORE --> VOICE_AI
     CORE --> CALL_AI
 
-    %% ------------------ YOUTUBE AGENTS ------------------
-    subgraph YT_AGENTS [YouTube & Media AI]
+    %% ------------------ YOUTUBE ------------------
+    subgraph YT_AGENTS YouTube and Media AI
         YT_AI[AI YouTube Agent]
         YT_ANALYZER[AI Video Analyzer]
     end
@@ -198,8 +197,8 @@ flowchart LR
     CORE --> YT_AI
     CORE --> YT_ANALYZER
 
-    %% ------------------ RECRUITER AI ------------------
-    subgraph RECRUITER_AI [Recruiter / Hiring AI]
+    %% ------------------ RECRUITER ------------------
+    subgraph RECRUITER_AI Recruiter and Hiring AI
         MATCH_AI[AI Matching Agent]
         EMAIL_PARSE_AI[AI Email Parsing Agent]
         SKILL_AI[AI Skill Extraction Agent]
@@ -217,11 +216,11 @@ flowchart LR
     CORE --> INTERVIEW_AI
     CORE --> INTERVIEW_SUM_AI
 
-    %% ------------------ SOCIAL AUTOMATION ------------------
-    subgraph SOCIAL_AI [Social Automation AI]
-        LINKEDIN_AI[LinkedIn Post AI]
-        TWITTER_AI[Twitter Fetch AI]
-        GITHUB_AI[GitHub Automation AI]
+    %% ------------------ SOCIAL ------------------
+    subgraph SOCIAL_AI Social Automation AI
+        LINKEDIN_AI[AI LinkedIn Post Agent]
+        TWITTER_AI[AI Twitter Agent]
+        GITHUB_AI[AI GitHub Automation Agent]
     end
 
     CORE --> LINKEDIN_AI
@@ -229,7 +228,7 @@ flowchart LR
     CORE --> GITHUB_AI
 
     %% ------------------ FUNCTION TOOLS ------------------
-    subgraph FUNCTION_TOOLS [AI Function Tools]
+    subgraph FUNCTION_TOOLS AI Function Tools
         TOOL_NOTES[Drive Notes Tool]
         TOOL_DAY_DETAIL[Day Detail Tool]
         TOOL_YT_SEARCH[YouTube Search Tool]
@@ -244,7 +243,6 @@ flowchart LR
         TOOL_VECTOR[Embedding Vector Tool]
     end
 
-    %% Mapping agents → tools
     CHAT_AI --> TOOL_NOTES
     CHAT_AI --> TOOL_YT_SEARCH
     CHAT_AI --> TOOL_CONTEXT
@@ -272,16 +270,16 @@ flowchart LR
     TWITTER_AI --> TOOL_GMAIL
     GITHUB_AI --> TOOL_GH
 
-    %% ------------------ COMPOSIO LAYER ------------------
-    subgraph COMPOSIO [Composio Integrations]
-        COMP_GMAIL[Gmail (Composio)]
-        COMP_DRIVE[Drive (Composio)]
-        COMP_CAL[Calendar (Composio)]
-        COMP_YT[YouTube (Composio)]
-        COMP_MEET[Google Meet (Composio)]
-        COMP_LINKEDIN[LinkedIn (Composio)]
-        COMP_GH[GitHub (Composio)]
-        COMP_TWITTER[Twitter (Composio)]
+    %% ------------------ COMPOSIO ------------------
+    subgraph COMPOSIO Composio Integrations
+        COMP_GMAIL[Gmail Composio]
+        COMP_DRIVE[Drive Composio]
+        COMP_CAL[Calendar Composio]
+        COMP_YT[YouTube Composio]
+        COMP_MEET[Meet Composio]
+        COMP_LINKEDIN[LinkedIn Composio]
+        COMP_GH[GitHub Composio]
+        COMP_TWITTER[Twitter Composio]
     end
 
     TOOL_NOTES --> COMP_DRIVE
@@ -293,8 +291,8 @@ flowchart LR
     TOOL_CALL --> COMP_MEET
     TOOL_CAL --> COMP_CAL
 
-    %% ------------------ GOOGLE NATIVE APIs ------------------
-    subgraph GOOGLE [Google Native APIs]
+    %% ------------------ GOOGLE APIS ------------------
+    subgraph GOOGLE Google APIs
         GMAIL_API[Gmail API]
         DRIVE_API[Drive API]
         CAL_API[Calendar API]
@@ -309,8 +307,6 @@ flowchart LR
     COMP_YT --> YT_API
     COMP_MEET --> MEET_API
 
-
-```
 
 ---
 
