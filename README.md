@@ -66,173 +66,211 @@ EduAI is a comprehensive dual-user ecosystem that revolutionizes both learning a
 
 
 ```mermaid
-flowchart LR
+flowchart TB
 
-    %% ------------------ MODEL FAILOVER ------------------
-    subgraph MODEL_LAYER Model Selection and Failover
-        OPENAI[OpenAI API Primary]
-        OPENAI_FAIL{OpenAI Failure}
-        GEMINI[Gemini Flash Series Fallback]
+%% ===================== MODEL FAILOVER =====================
+subgraph MODEL_LAYER [Model Selection and Failover]
+    direction TB
+    OPENAI[OpenAI API Primary]
+    OPENAI_FAIL{If OpenAI Fails}
+    GEMINI[Gemini Flash Series Fallback Models]
 
-        OPENAI -->|Success| CORE
-        OPENAI -.->|Error| OPENAI_FAIL
-        OPENAI_FAIL --> GEMINI
-        GEMINI --> CORE
-    end
+    OPENAI -->|Success| CORE
+    OPENAI -.->|Error| OPENAI_FAIL
+    OPENAI_FAIL --> GEMINI
+    GEMINI --> CORE
+end
 
-    %% ------------------ CORE HUB ------------------
-    CORE((EDUAI AI Hub))
+%% ===================== CORE HUB =====================
+CORE((EDUAI Central AI Hub))
 
-    %% ------------------ LEARNING AGENTS ------------------
-    subgraph LEARNING_AGENTS Learning AI Agents
-        CHAT_AI[AI Chat Agent]
-        LEARN_AI[AI Learning Agent]
-        SUBPLAN_AI[AI Subplan Agent]
-        QUIZ_AI[AI Quiz Agent]
-        NOTES_AI[AI Notes Agent]
-        DAILY_AI[AI Daily Routine Agent]
-        ANALYTICS_AI[AI Progress Analyzer]
-        CONTEXT_ENGINE[AI Context Engine]
-        PLANNING_AI[AI Planning Agent]
-    end
+%% SPACER
+SPACE1[ ]:::invisible
 
-    CORE --> CHAT_AI
-    CORE --> LEARN_AI
-    CORE --> SUBPLAN_AI
-    CORE --> QUIZ_AI
-    CORE --> NOTES_AI
-    CORE --> DAILY_AI
-    CORE --> ANALYTICS_AI
-    CORE --> CONTEXT_ENGINE
-    CORE --> PLANNING_AI
+%% ===================== LEARNING AI AGENTS =====================
+subgraph LEARNING_AGENTS [Learning and Student AI Agents]
+    direction TB
+    CHAT_AI[AI Chat Agent]
+    LEARN_AI[AI Learning Agent]
+    SUBPLAN_AI[AI Subplan Agent]
+    QUIZ_AI[AI Quiz Agent]
+    NOTES_AI[AI Notes Agent]
+    DAILY_AI[AI Daily Routine Agent]
+    ANALYTICS_AI[AI Progress Analyzer]
+    CONTEXT_ENGINE[AI Context Engine]
+    PLANNING_AI[AI Planning Agent]
+end
 
-    %% ------------------ CALL AND VOICE ------------------
-    subgraph CALL_AGENTS Voice and Call AI
-        VOICE_AI[AI Voice Agent Twilio]
-        CALL_AI[AI Call Agent]
-    end
+CORE --> CHAT_AI
+CORE --> LEARN_AI
+CORE --> SUBPLAN_AI
+CORE --> QUIZ_AI
+CORE --> NOTES_AI
+CORE --> DAILY_AI
+CORE --> ANALYTICS_AI
+CORE --> CONTEXT_ENGINE
+CORE --> PLANNING_AI
 
-    CORE --> VOICE_AI
-    CORE --> CALL_AI
+%% SPACER
+SPACE2[ ]:::invisible
 
-    %% ------------------ YOUTUBE ------------------
-    subgraph YT_AGENTS YouTube and Media AI
-        YT_AI[AI YouTube Agent]
-        YT_ANALYZER[AI Video Analyzer]
-    end
+%% ===================== VOICE AND CALL AI =====================
+subgraph CALL_AGENTS [Voice and Call AI Agents]
+    direction TB
+    VOICE_AI[AI Voice Agent Twilio]
+    CALL_AI[AI Call Agent]
+end
 
-    CORE --> YT_AI
-    CORE --> YT_ANALYZER
+CORE --> VOICE_AI
+CORE --> CALL_AI
 
-    %% ------------------ RECRUITER ------------------
-    subgraph RECRUITER_AI Recruiter and Hiring AI
-        MATCH_AI[AI Matching Agent]
-        EMAIL_PARSE_AI[AI Email Parsing Agent]
-        SKILL_AI[AI Skill Extraction Agent]
-        JOB_ANALYSIS_AI[AI Job Analysis Agent]
-        RESUME_RANK_AI[AI Resume Ranking Agent]
-        INTERVIEW_AI[AI Interview Scheduling Agent]
-        INTERVIEW_SUM_AI[AI Interview Summary Agent]
-    end
+%% SPACER
+SPACE3[ ]:::invisible
 
-    CORE --> MATCH_AI
-    CORE --> EMAIL_PARSE_AI
-    CORE --> SKILL_AI
-    CORE --> JOB_ANALYSIS_AI
-    CORE --> RESUME_RANK_AI
-    CORE --> INTERVIEW_AI
-    CORE --> INTERVIEW_SUM_AI
+%% ===================== YOUTUBE AND MEDIA AI =====================
+subgraph YT_AGENTS [YouTube and Media AI]
+    direction TB
+    YT_AI[AI YouTube Agent]
+    YT_ANALYZER[AI Video Analyzer]
+end
 
-    %% ------------------ SOCIAL ------------------
-    subgraph SOCIAL_AI Social Automation AI
-        LINKEDIN_AI[AI LinkedIn Post Agent]
-        TWITTER_AI[AI Twitter Agent]
-        GITHUB_AI[AI GitHub Automation Agent]
-    end
+CORE --> YT_AI
+CORE --> YT_ANALYZER
 
-    CORE --> LINKEDIN_AI
-    CORE --> TWITTER_AI
-    CORE --> GITHUB_AI
+%% SPACER
+SPACE4[ ]:::invisible
 
-    %% ------------------ FUNCTION TOOLS ------------------
-    subgraph FUNCTION_TOOLS AI Function Tools
-        TOOL_NOTES[Drive Notes Tool]
-        TOOL_DAY_DETAIL[Day Detail Tool]
-        TOOL_YT_SEARCH[YouTube Search Tool]
-        TOOL_YT_PLAYLIST[YouTube Playlist Tool]
-        TOOL_CALL[Call Initiator Tool]
-        TOOL_POST[LinkedIn Post Tool]
-        TOOL_GH[GitHub Tool]
-        TOOL_CONTEXT[Context Query Tool]
-        TOOL_GMAIL[Gmail Tool]
-        TOOL_CAL[Calendar Tool]
-        TOOL_MEET[Meet Tool]
-        TOOL_VECTOR[Embedding Vector Tool]
-    end
+%% ===================== RECRUITER / HIRING AI =====================
+subgraph RECRUITER_AI [Recruiter and Hiring AI Agents]
+    direction TB
+    MATCH_AI[AI Matching Agent]
+    EMAIL_PARSE_AI[AI Email Parsing Agent]
+    SKILL_AI[AI Skill Extraction Agent]
+    JOB_ANALYSIS_AI[AI Job Analysis Agent]
+    RESUME_RANK_AI[AI Resume Ranking Agent]
+    INTERVIEW_AI[AI Interview Scheduling Agent]
+    INTERVIEW_SUM_AI[AI Interview Summary Agent]
+end
 
-    CHAT_AI --> TOOL_NOTES
-    CHAT_AI --> TOOL_YT_SEARCH
-    CHAT_AI --> TOOL_CONTEXT
-    CHAT_AI --> TOOL_GMAIL
+CORE --> MATCH_AI
+CORE --> EMAIL_PARSE_AI
+CORE --> SKILL_AI
+CORE --> JOB_ANALYSIS_AI
+CORE --> RESUME_RANK_AI
+CORE --> INTERVIEW_AI
+CORE --> INTERVIEW_SUM_AI
 
-    LEARN_AI --> TOOL_DAY_DETAIL
-    SUBPLAN_AI --> TOOL_DAY_DETAIL
-    QUIZ_AI --> TOOL_DAY_DETAIL
+%% SPACER
+SPACE5[ ]:::invisible
 
-    VOICE_AI --> TOOL_CALL
-    CALL_AI --> TOOL_CALL
+%% ===================== SOCIAL AUTOMATION AI =====================
+subgraph SOCIAL_AI [Social Automation AI]
+    direction TB
+    LINKEDIN_AI[AI LinkedIn Post Agent]
+    TWITTER_AI[AI Twitter Automation Agent]
+    GITHUB_AI[AI GitHub Automation Agent]
+end
 
-    YT_AI --> TOOL_YT_SEARCH
-    YT_AI --> TOOL_YT_PLAYLIST
+CORE --> LINKEDIN_AI
+CORE --> TWITTER_AI
+CORE --> GITHUB_AI
 
-    MATCH_AI --> TOOL_VECTOR
-    EMAIL_PARSE_AI --> TOOL_GMAIL
-    SKILL_AI --> TOOL_GMAIL
-    RESUME_RANK_AI --> TOOL_VECTOR
+%% SPACER
+SPACE6[ ]:::invisible
 
-    INTERVIEW_AI --> TOOL_CAL
-    INTERVIEW_AI --> TOOL_MEET
+%% ===================== FUNCTION TOOLS =====================
+subgraph FUNCTION_TOOLS [AI Function Tools]
+    direction TB
+    TOOL_NOTES[Drive Notes Tool]
+    TOOL_DAY_DETAIL[Day Detail Tool]
+    TOOL_YT_SEARCH[YouTube Search Tool]
+    TOOL_YT_PLAYLIST[YouTube Playlist Tool]
+    TOOL_CALL[Call Initiator Tool]
+    TOOL_POST[LinkedIn Post Tool]
+    TOOL_GH[GitHub Tool]
+    TOOL_CONTEXT[Context Query Tool]
+    TOOL_GMAIL[Gmail Tool]
+    TOOL_CAL[Calendar Tool]
+    TOOL_MEET[Google Meet Tool]
+    TOOL_VECTOR[Embedding Vector Tool]
+end
 
-    LINKEDIN_AI --> TOOL_POST
-    TWITTER_AI --> TOOL_GMAIL
-    GITHUB_AI --> TOOL_GH
+CHAT_AI --> TOOL_NOTES
+CHAT_AI --> TOOL_YT_SEARCH
+CHAT_AI --> TOOL_CONTEXT
+CHAT_AI --> TOOL_GMAIL
 
-    %% ------------------ COMPOSIO ------------------
-    subgraph COMPOSIO Composio Integrations
-        COMP_GMAIL[Gmail Composio]
-        COMP_DRIVE[Drive Composio]
-        COMP_CAL[Calendar Composio]
-        COMP_YT[YouTube Composio]
-        COMP_MEET[Meet Composio]
-        COMP_LINKEDIN[LinkedIn Composio]
-        COMP_GH[GitHub Composio]
-        COMP_TWITTER[Twitter Composio]
-    end
+LEARN_AI --> TOOL_DAY_DETAIL
+SUBPLAN_AI --> TOOL_DAY_DETAIL
+QUIZ_AI --> TOOL_DAY_DETAIL
 
-    TOOL_NOTES --> COMP_DRIVE
-    TOOL_GMAIL --> COMP_GMAIL
-    TOOL_YT_SEARCH --> COMP_YT
-    TOOL_YT_PLAYLIST --> COMP_YT
-    TOOL_POST --> COMP_LINKEDIN
-    TOOL_GH --> COMP_GH
-    TOOL_CALL --> COMP_MEET
-    TOOL_CAL --> COMP_CAL
+VOICE_AI --> TOOL_CALL
+CALL_AI --> TOOL_CALL
 
-    %% ------------------ GOOGLE APIS ------------------
-    subgraph GOOGLE Google APIs
-        GMAIL_API[Gmail API]
-        DRIVE_API[Drive API]
-        CAL_API[Calendar API]
-        YT_API[YouTube API]
-        MEET_API[Google Meet API]
-        CONTACTS_API[Contacts API]
-    end
+YT_AI --> TOOL_YT_SEARCH
+YT_AI --> TOOL_YT_PLAYLIST
 
-    COMP_DRIVE --> DRIVE_API
-    COMP_GMAIL --> GMAIL_API
-    COMP_CAL --> CAL_API
-    COMP_YT --> YT_API
-    COMP_MEET --> MEET_API
+MATCH_AI --> TOOL_VECTOR
+
+EMAIL_PARSE_AI --> TOOL_GMAIL
+SKILL_AI --> TOOL_GMAIL
+RESUME_RANK_AI --> TOOL_VECTOR
+
+INTERVIEW_AI --> TOOL_CAL
+INTERVIEW_AI --> TOOL_MEET
+
+LINKEDIN_AI --> TOOL_POST
+TWITTER_AI --> TOOL_GMAIL
+GITHUB_AI --> TOOL_GH
+
+%% SPACER
+SPACE7[ ]:::invisible
+
+%% ===================== COMPOSIO =====================
+subgraph COMPOSIO [Composio Service Integrations]
+    direction TB
+    COMP_GMAIL[Gmail Composio]
+    COMP_DRIVE[Drive Composio]
+    COMP_CAL[Calendar Composio]
+    COMP_YT[YouTube Composio]
+    COMP_MEET[Meet Composio]
+    COMP_LINKEDIN[LinkedIn Composio]
+    COMP_GH[GitHub Composio]
+    COMP_TWITTER[Twitter Composio]
+end
+
+TOOL_NOTES --> COMP_DRIVE
+TOOL_GMAIL --> COMP_GMAIL
+TOOL_YT_SEARCH --> COMP_YT
+TOOL_YT_PLAYLIST --> COMP_YT
+TOOL_POST --> COMP_LINKEDIN
+TOOL_GH --> COMP_GH
+TOOL_CALL --> COMP_MEET
+TOOL_CAL --> COMP_CAL
+
+%% SPACER
+SPACE8[ ]:::invisible
+
+%% ===================== GOOGLE APIS =====================
+subgraph GOOGLE [Google Native APIs]
+    direction TB
+    GMAIL_API[Gmail API]
+    DRIVE_API[Drive API]
+    CAL_API[Calendar API]
+    YT_API[YouTube API]
+    MEET_API[Google Meet API]
+    CONTACTS_API[Contacts API]
+end
+
+COMP_DRIVE --> DRIVE_API
+COMP_GMAIL --> GMAIL_API
+COMP_CAL --> CAL_API
+COMP_YT --> YT_API
+COMP_MEET --> MEET_API
+
+%% Invisible Node Style
+classDef invisible fill:none,stroke:none;
+
 
 
 ```
