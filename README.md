@@ -1827,38 +1827,6 @@ flowchart TD
     style END fill:#2196F3,stroke:#1565C0,stroke-width:3px
 ```
 
-### Security Architecture
-
-```mermaid
-%%{init: {'theme':'dark'}}%%
-graph TB
-    subgraph SECURITY["Security Layers"]
-        subgraph AUTH_SEC["Authentication"]
-            JWT["JWT Tokens<br/>━━━━━━━━━━━━━━<br/>HS256 Algorithm<br/>30min Expiry<br/>Refresh Tokens"]
-            OAUTH["OAuth 2.0<br/>━━━━━━━━━━━━━━<br/>8 Services<br/>Token Encryption<br/>Scope Management"]
-        end
-        
-        subgraph DATA_SEC["Data Security"]
-            ENCRYPT["Encryption<br/>━━━━━━━━━━━━━━<br/>AES-256<br/>At Rest & Transit<br/>Key Rotation"]
-            HASH["Password Hashing<br/>━━━━━━━━━━━━━━<br/>Bcrypt<br/>Salt Rounds: 12<br/>Secure Storage"]
-        end
-        
-        subgraph API_SEC["API Security"]
-            RATE["Rate Limiting<br/>━━━━━━━━━━━━━━<br/>Per User/IP<br/>Sliding Window<br/>DDoS Protection"]
-            CORS["CORS Policy<br/>━━━━━━━━━━━━━━<br/>Whitelist Origins<br/>Credentials Support<br/>Preflight Handling"]
-        end
-        
-        subgraph DB_SEC["Database Security"]
-            SQL["SQL Injection<br/>━━━━━━━━━━━━━━<br/>Parameterized Queries<br/>ORM Protection<br/>Input Validation"]
-            BACKUP["Backups<br/>━━━━━━━━━━━━━━<br/>Every 6 Hours<br/>30-Day Retention<br/>Encrypted Storage"]
-        end
-    end
-    
-    style JWT fill:#4CAF50,stroke:#2E7D32,stroke-width:2px
-    style ENCRYPT fill:#2196F3,stroke:#1565C0,stroke-width:2px
-    style RATE fill:#FF9800,stroke:#E65100,stroke-width:2px
-    style SQL fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px
-```
 
 ---
 
