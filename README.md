@@ -49,10 +49,20 @@ EduAI is a comprehensive dual-user ecosystem that revolutionizes both learning a
 ### 📊 Platform Scale Overview - The Complete Ecosystem
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4361EE','secondaryColor':'#06FFA5','tertiaryColor':'#FF6B35','primaryBorderColor':'#7209B7','clusterBkg':'#1A1A2E','clusterBorder':'#16213E','nodeBorder':'#4F8BF9','edgeLabelBackground':'#1E3A8A'}}}%%
+%%{init: {'theme':'default', 'themeVariables': {
+  'primaryColor': '#ffffff',
+  'primaryBorderColor': '#4361ee',
+  'primaryTextColor': '#000000',
+  'lineColor': '#4361ee',
+  'clusterBkg': '#f8f9fa',
+  'clusterBorder': '#dee2e6',
+  'nodeBorder': '#4361ee',
+  'nodeBkg': '#ffffff',
+  'textColor': '#000000'
+}}}%%
 mindmap
-  root((🌌 EduAI Platform))
-    🎨 Frontend
+  root((🌌 EduAI Platform<br/>26,571 Lines | 127 Files))
+    🎨 Frontend (43 Components)
       👨🎓 Student Platform
         🔐 Auth & Onboarding
         📊 Learning Dashboard
@@ -64,7 +74,7 @@ mindmap
         👥 Candidate Management
         💼 Job Postings
         📧 Email Analysis
-    ⚡ Backend
+    ⚡ Backend (17 Services)
       🔥 FastAPI Server
         🌐 59 Endpoints
         🔐 JWT Auth
@@ -75,7 +85,7 @@ mindmap
         🧠 AI Services
         🔑 OAuth
         📞 Communication
-    🤖 AI Intelligence
+    🤖 AI Intelligence (4 Models)
       🟢 Gemini 2.0 Flash
         📈 95% Traffic
         ⚡ <500ms
@@ -83,11 +93,11 @@ mindmap
         🔵 1.5 Flash
         🟠 1.5 Pro
         🟣 Pro
-      🔧 Tools
+      🔧 Tools (8)
         📁 Drive
         📺 YouTube
         📞 Voice
-    🔐 OAuth
+    🔐 OAuth (8 Services)
       🟣 Hybrid System
         ✅ 99.8% Uptime
       🌐 Integrations
@@ -95,7 +105,7 @@ mindmap
         📁 Drive
         🗓️ Calendar
         📺 YouTube
-    🗄️ Database
+    🗄️ Database (16 Tables)
       📊 Structure
         👥 Users
         🎓 Learning
@@ -104,7 +114,7 @@ mindmap
       ⚡ Performance
         📋 165 Columns
         ⚡ 12ms Query
-    ⚙️ Workers
+    ⚙️ Background Workers
       🐙 GitHub
         📁 Repos
         📝 Commits
