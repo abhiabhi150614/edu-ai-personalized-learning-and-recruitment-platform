@@ -139,6 +139,9 @@ mindmap
         ⭐ 8.1/10 Code
 
 ```
+
+
+```mermaid
 flowchart LR
 
     %% ------------------ MODEL FAILOVER ------------------
@@ -308,7 +311,7 @@ flowchart LR
     COMP_MEET --> MEET_API
 
 
----
+```
 
 ## 🏛️ System Architecture
 
