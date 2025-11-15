@@ -49,105 +49,89 @@ EduAI is a comprehensive dual-user ecosystem that revolutionizes both learning a
 ### 📊 Platform Scale Overview - The Complete Ecosystem
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': { 'primaryColor':'#4361EE','secondaryColor':'#06FFA5','tertiaryColor':'#FF6B35'}}}%%
+%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4361EE','secondaryColor':'#06FFA5','tertiaryColor':'#FF6B35','primaryBorderColor':'#7209B7','clusterBkg':'#1A1A2E','clusterBorder':'#16213E','nodeBorder':'#4F8BF9','edgeLabelBackground':'#1E3A8A'}}}%%
 mindmap
-  root((🌌 EduAI Platform<br/>26,571 Lines<br/>127 Files))
+  root((🌌 EduAI Platform<br/>📊 26,571 Lines<br/>📁 127 Files))
     🎨 Frontend - 43 Components
       👨🎓 Student Platform
-        25 Components
-        Auth & Onboarding
-        Learning Dashboard
-        AI Chatbot
-        Voice Tutor
-        Quiz System
-        Social Features
+        🔐 Auth & Onboarding
+        📊 Learning Dashboard
+        🤖 AI Chatbot
+        🎙️ Voice Tutor
+        ❓ Quiz System
       💼 Recruiter Platform
-        18 Components
-        Analytics Dashboard
-        Candidate Management
-        Job Postings
-        Email Analysis
-        Interview Scheduler
+        📈 Analytics Dashboard
+        👥 Candidate Management
+        💼 Job Postings
+        📧 Email Analysis
     ⚡ Backend - 17 Services
       🔥 FastAPI Server
-        11 Route Modules
-        59 API Endpoints
-        JWT Authentication
+        🛣️ 11 Route Modules
+        🌐 59 API Endpoints
+        🔐 JWT Authentication
       🎙️ Flask Voice Server
-        Twilio Integration
-        Speech Recognition
+        📞 Twilio Integration
+        🎤 Speech Recognition
       ☁️ Core Services
-        AI Services
-        OAuth Services
-        Communication
-        Google Suite
-        Content Services
+        🧠 AI Services
+        🔑 OAuth Services
+        📞 Communication
     🤖 AI Intelligence - 4 Models
       🟢 Gemini 2.0 Flash
-        Primary Model
-        95% Traffic
-        <500ms Response
+        🎯 Primary Model
+        📈 95% Traffic
+        ⚡ <500ms Response
       🔄 3 Fallback Models
-        Gemini 1.5 Flash
-        Gemini 1.5 Pro
-        Gemini Pro
-      🔧 8 Agentic Tools
-        Drive Notes
-        YouTube Videos
-        Voice Calls
-        LinkedIn Posts
-        Context Query
+        🔵 Gemini 1.5 Flash
+        🟠 Gemini 1.5 Pro
+        🟣 Gemini Pro
+      🔧 Agentic Tools
+        📁 Drive Notes
+        📺 YouTube Videos
+        📞 Voice Calls
     🔐 OAuth - 8 Services
       🟣 Hybrid System
-        Composio Primary
-        Google Fallback
-        99.8% Uptime
+        ⭐ Composio Primary
+        🅖 Google Fallback
+        ✅ 99.8% Uptime
       🌐 Integrations
-        Gmail
-        Drive
-        Calendar
-        YouTube
-        Meet
-        LinkedIn
-        GitHub
-        Twitter
+        📧 Gmail
+        📁 Drive
+        🗓️ Calendar
+        📺 YouTube
     🗄️ Database - 16 Tables
       📊 Data Structure
-        Users & Auth
-        Learning System
-        Recruiter System
-        AI & Analytics
+        👥 Users & Auth
+        🎓 Learning System
+        💼 Recruiter System
+        🧠 AI & Analytics
       ⚡ Performance
-        165 Columns
-        51 Indexes
-        12ms Avg Query
-        87% Cache Hit
+        📋 165 Columns
+        🗂️ 51 Indexes
+        ⚡ 12ms Avg Query
     ⚙️ Background Workers
       🐙 GitHub Worker
-        Repo Creation
-        Daily Commits
+        📁 Repo Creation
+        📝 Daily Commits
       📨 Email Worker
-        Notifications
-        Queue Processing
-      📊 Analytics
-        Progress Tracking
-        Metrics
-      📝 Quiz Generator
-        AI Questions
-        Auto-Regeneration
-    📈 Performance
+        🔔 Notifications
+        📊 Queue Processing
+      📈 Analytics
+        📊 Progress Tracking
+        📏 Metrics
+    📊 Performance
       ⚡ Speed
-        150ms Auth
-        280ms Learning Plan
-        450ms AI Chatbot
+        🔐 150ms Auth
+        🎓 280ms Learning Plan
+        🤖 450ms AI Chatbot
       🎯 Scale
-        1,000+ Users
-        2,500+ Req/sec
-        10,000+ Queries/min
+        👥 1,000+ Users
+        📈 2,500+ Req/sec
+        🔍 10,000+ Queries/min
       ✅ Quality
-        99.8% Uptime
-        83% Test Coverage
-        8.1/10 Code Quality
+        ✅ 99.8% Uptime
+        🧪 83% Test Coverage
+        ⭐ 8.1/10 Code Quality
 ```
 
 ---
