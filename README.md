@@ -49,89 +49,129 @@ EduAI is a comprehensive dual-user ecosystem that revolutionizes both learning a
 ### 📊 Platform Scale Overview - The Complete Ecosystem
 
 ```mermaid
-%%{init: {'theme':'dark', 'themeVariables': {'primaryColor':'#4361EE','secondaryColor':'#06FFA5','tertiaryColor':'#FF6B35','primaryBorderColor':'#7209B7','clusterBkg':'#1A1A2E','clusterBorder':'#16213E','nodeBorder':'#4F8BF9','edgeLabelBackground':'#1E3A8A'}}}%%
-mindmap
-  root((🌌 EduAI Platform<br/>📊 26,571 Lines<br/>📁 127 Files))
-    🎨 Frontend - 43 Components
-      👨🎓 Student Platform
-        🔐 Auth & Onboarding
-        📊 Learning Dashboard
-        🤖 AI Chatbot
-        🎙️ Voice Tutor
-        ❓ Quiz System
-      💼 Recruiter Platform
-        📈 Analytics Dashboard
-        👥 Candidate Management
-        💼 Job Postings
-        📧 Email Analysis
-    ⚡ Backend - 17 Services
-      🔥 FastAPI Server
-        🛣️ 11 Route Modules
-        🌐 59 API Endpoints
-        🔐 JWT Authentication
-      🎙️ Flask Voice Server
-        📞 Twilio Integration
-        🎤 Speech Recognition
-      ☁️ Core Services
-        🧠 AI Services
-        🔑 OAuth Services
-        📞 Communication
-    🤖 AI Intelligence - 4 Models
-      🟢 Gemini 2.0 Flash
-        🎯 Primary Model
-        📈 95% Traffic
-        ⚡ <500ms Response
-      🔄 3 Fallback Models
-        🔵 Gemini 1.5 Flash
-        🟠 Gemini 1.5 Pro
-        🟣 Gemini Pro
-      🔧 Agentic Tools
-        📁 Drive Notes
-        📺 YouTube Videos
-        📞 Voice Calls
-    🔐 OAuth - 8 Services
-      🟣 Hybrid System
-        ⭐ Composio Primary
-        🅖 Google Fallback
-        ✅ 99.8% Uptime
-      🌐 Integrations
-        📧 Gmail
-        📁 Drive
-        🗓️ Calendar
-        📺 YouTube
-    🗄️ Database - 16 Tables
-      📊 Data Structure
-        👥 Users & Auth
-        🎓 Learning System
-        💼 Recruiter System
-        🧠 AI & Analytics
-      ⚡ Performance
-        📋 165 Columns
-        🗂️ 51 Indexes
-        ⚡ 12ms Avg Query
-    ⚙️ Background Workers
-      🐙 GitHub Worker
-        📁 Repo Creation
-        📝 Daily Commits
-      📨 Email Worker
-        🔔 Notifications
-        📊 Queue Processing
-      📈 Analytics
-        📊 Progress Tracking
-        📏 Metrics
-    📊 Performance
-      ⚡ Speed
-        🔐 150ms Auth
-        🎓 280ms Learning Plan
-        🤖 450ms AI Chatbot
-      🎯 Scale
-        👥 1,000+ Users
-        📈 2,500+ Req/sec
-        🔍 10,000+ Queries/min
-      ✅ Quality
-        ✅ 99.8% Uptime
-        🧪 83% Test Coverage
-        ⭐ 8.1/10 Code Quality
+%%{init: {
+  "theme": "dark",
+  "themeVariables": {
+    "primaryColor": "#4CC9F0",
+    "secondaryColor": "#F72585",
+    "tertiaryColor": "#B5179E",
+    "fontSize": "15px",
+    "textColor": "#FFFFFF"
+  }
+}}%%
+
+graph TD
+    A((🌌 **EduAI Platform**<br/>26,571 Lines · 127 Files)):::core
+
+    %% FRONTEND
+    A --> B[🎨 **Frontend<br/>43 Components**]:::section
+    B --> B1[👨🎓 Student Platform<br/>25 Components]
+    B --> B2[💼 Recruiter Platform<br/>18 Components]
+    B1 --> B11[Auth & Onboarding]
+    B1 --> B12[Learning Dashboard]
+    B1 --> B13[AI Chatbot]
+    B1 --> B14[Voice Tutor]
+    B1 --> B15[Quiz System]
+    B1 --> B16[Social Features]
+    B2 --> B21[Analytics Dashboard]
+    B2 --> B22[Candidate Management]
+    B2 --> B23[Job Postings]
+    B2 --> B24[Email Analysis]
+    B2 --> B25[Interview Scheduler]
+
+    %% BACKEND
+    A --> C[⚡ **Backend<br/>17 Services**]:::section
+    C --> C1[🔥 FastAPI Server<br/>59 Endpoints]
+    C --> C2[🎙️ Flask Voice Server]
+    C --> C3[☁️ Core Services]
+    C1 --> C11[11 Route Modules]
+    C1 --> C12[JWT Auth]
+    C2 --> C21[Twilio Integration]
+    C2 --> C22[Speech Recognition]
+    C3 --> C31[AI Services]
+    C3 --> C32[OAuth Services]
+    C3 --> C33[Google Suite]
+    C3 --> C34[Content Services]
+
+    %% AI
+    A --> D[🤖 **AI Intelligence<br/>4 Models**]:::section
+    D --> D1[🟢 Gemini 2.0 Flash<br/>Primary Model]
+    D --> D2[🔄 Fallback Models]
+    D --> D3[🔧 8 Agentic Tools]
+    D1 --> D11[95% Traffic]
+    D1 --> D12[<500ms Response]
+    D2 --> D21[Gemini 1.5 Flash]
+    D2 --> D22[Gemini 1.5 Pro]
+    D2 --> D23[Gemini Pro]
+    D3 --> D31[Drive Notes]
+    D3 --> D32[YouTube Videos]
+    D3 --> D33[Voice Calls]
+    D3 --> D34[LinkedIn Posts]
+    D3 --> D35[Context Query]
+
+    %% OAUTH
+    A --> E[🔐 **OAuth – 8 Services**]:::section
+    E --> E1[Hybrid System]
+    E --> E2[Integrations]
+    E1 --> E11[Composio Primary]
+    E1 --> E12[Google Fallback]
+    E1 --> E13[99.8% Uptime]
+    E2 --> E21[Gmail]
+    E2 --> E22[Drive]
+    E2 --> E23[Calendar]
+    E2 --> E24[YouTube]
+    E2 --> E25[Meet]
+    E2 --> E26[LinkedIn]
+    E2 --> E27[GitHub]
+    E2 --> E28[Twitter]
+
+    %% DATABASE
+    A --> F[🗄️ **Database – 16 Tables**]:::section
+    F --> F1[Data Structure]
+    F --> F2[Performance]
+    F1 --> F11[Users & Auth]
+    F1 --> F12[Learning System]
+    F1 --> F13[Recruiter System]
+    F1 --> F14[AI & Analytics]
+    F2 --> F21[165 Columns]
+    F2 --> F22[51 Indexes]
+    F2 --> F23[12ms Avg Query]
+    F2 --> F24[87% Cache Hit]
+
+    %% WORKERS
+    A --> G[⚙️ **Background Workers**]:::section
+    G --> G1[GitHub Worker]
+    G --> G2[Email Worker]
+    G --> G3[Analytics Worker]
+    G --> G4[Quiz Generator]
+    G1 --> G11[Repo Creation]
+    G1 --> G12[Daily Commits]
+    G2 --> G21[Notifications]
+    G2 --> G22[Queue Processing]
+    G3 --> G31[Progress Tracking]
+    G3 --> G32[Metrics]
+    G4 --> G41[AI Questions]
+    G4 --> G42[Auto-Regeneration]
+
+    %% PERFORMANCE
+    A --> H[📈 **Performance**]:::section
+    H --> H1[⚡ Speed]
+    H --> H2[🎯 Scale]
+    H --> H3[✅ Quality]
+    H1 --> H11[150ms Auth]
+    H1 --> H12[280ms Learning Plan]
+    H1 --> H13[450ms AI Chatbot]
+    H2 --> H21[1,000+ Users]
+    H2 --> H22[2,500+ Req/sec]
+    H2 --> H23[10,000+ Queries/min]
+    H3 --> H31[99.8% Uptime]
+    H3 --> H32[83% Test Coverage]
+    H3 --> H33[8.1/10 Code Quality]
+
+    %% STYLES
+    classDef core fill:#4CC9F0,color:#000,stroke:#000,stroke-width:2px;
+    classDef section fill:#3A0CA3,color:#fff,stroke:#F72585,stroke-width:1.5px;
+
 ```
 
 ---
