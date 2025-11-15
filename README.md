@@ -140,6 +140,118 @@ mindmap
 
 ```
 
+```mermaid
+%%{init: {'theme':'dark', 'themeVariables': {
+    'primaryColor': '#4CAF50',
+    'secondaryColor': '#00BCD4',
+    'tertiaryColor': '#9C27B0',
+    'textColor': '#FFFFFF',
+    'lineColor': '#00eaff',
+    'fontSize': '16px'
+}}}%%
+
+graph LR
+
+    %% CORE AI SYSTEM
+    AI_CORE((✨ EDUAI<br/>AI Intelligence Hub)):::core
+
+    %% AI AGENTS
+    LEARN_AGENT[🧠 Learning Agent<br/>Plan Generator • Day Detail • Quizzes]:::agent
+    CHAT_AGENT[💬 Chatbot Agent<br/>Context-Aware • Tool-Calling]:::agent
+    VOICE_AGENT[📞 Voice Tutor Agent<br/>Twilio • Memory • Live Q&A]:::agent
+    MATCH_AGENT[🎯 Recruiter Matching Agent<br/>Vector Search • AI Scoring]:::agent
+    EMAIL_AGENT[📧 Email Intelligence Agent<br/>Resume Parsing • Skill Extraction]:::agent
+    SOCIAL_AGENT[🌐 Social Automation Agent<br/>LinkedIn • GitHub • Twitter]:::agent
+
+    %% AI MODELS
+    PRIMARY_MODEL[🟢 Gemini 2.0 Flash<br/>Primary Model<br/><500ms]:::model
+    FALLBACK_MODELS[🔄 3 Fallback Models<br/>1.5 Flash • 1.5 Pro • Pro]:::model
+
+    %% FUNCTION TOOLS
+    subgraph "🧩 Function Tools (8 Agentic Tools)"
+        NOTES_TOOL[📁 Drive Notes]
+        YT_SEARCH[📺 YouTube Search]
+        YT_PLAYLIST[🎞️ Playlist Creator]
+        CALL_TOOL[📞 Voice Call Initiator]
+        POST_TOOL[🔗 LinkedIn Poster]
+        GITHUB_TOOL[🐙 GitHub Worker]
+        CONTEXT_TOOL[🧩 Context Query]
+        EMAIL_TOOL[📬 Email Actions]
+    end
+
+    %% COMPOSIO + GOOGLE SERVICES
+    subgraph "🔐 Composio Integrations (8 Services)"
+        COMP_GMAIL[📧 Gmail]
+        COMP_DRIVE[📁 Drive]
+        COMP_CAL[🗓️ Calendar]
+        COMP_YT[📺 YouTube]
+        COMP_MEET[🎥 Meet]
+        COMP_LINKEDIN[🔗 LinkedIn]
+        COMP_GITHUB[🐙 GitHub]
+        COMP_TWITTER[🐦 Twitter]
+    end
+
+    subgraph "🌐 Google Native Services"
+        GMAIL_API[📧 Gmail API]
+        DRIVE_API[📁 Drive API]
+        CAL_API[🗓️ Calendar API]
+        YT_API[📺 YouTube Data API]
+        MEET_API[🎥 Google Meet]
+        OAUTH_GOOGLE[🔑 Google OAuth]
+    end
+
+    %% CONNECTIONS
+    AI_CORE --> PRIMARY_MODEL
+    AI_CORE --> FALLBACK_MODELS
+
+    AI_CORE --> LEARN_AGENT
+    AI_CORE --> CHAT_AGENT
+    AI_CORE --> VOICE_AGENT
+    AI_CORE --> MATCH_AGENT
+    AI_CORE --> EMAIL_AGENT
+    AI_CORE --> SOCIAL_AGENT
+
+    CHAT_AGENT --> NOTES_TOOL
+    CHAT_AGENT --> YT_SEARCH
+    CHAT_AGENT --> YT_PLAYLIST
+    CHAT_AGENT --> CALL_TOOL
+    CHAT_AGENT --> POST_TOOL
+    CHAT_AGENT --> CONTEXT_TOOL
+    CHAT_AGENT --> EMAIL_TOOL
+
+    VOICE_AGENT --> CALL_TOOL
+    VOICE_AGENT --> CONTEXT_TOOL
+    VOICE_AGENT --> NOTES_TOOL
+
+    LEARN_AGENT --> CONTEXT_TOOL
+    LEARN_AGENT --> NOTES_TOOL
+    LEARN_AGENT --> YT_SEARCH
+
+    MATCH_AGENT --> CONTEXT_TOOL
+    EMAIL_AGENT --> EMAIL_TOOL
+
+    SOCIAL_AGENT --> POST_TOOL
+    SOCIAL_AGENT --> GITHUB_TOOL
+
+    %% GOOGLE / COMPOSIO PATHS
+    NOTES_TOOL --> COMP_DRIVE --> DRIVE_API
+    YT_SEARCH --> COMP_YT --> YT_API
+    YT_PLAYLIST --> COMP_YT --> YT_API
+    CALL_TOOL --> COMP_MEET --> MEET_API
+    EMAIL_TOOL --> COMP_GMAIL --> GMAIL_API
+    POST_TOOL --> COMP_LINKEDIN
+    GITHUB_TOOL --> COMP_GITHUB
+    CONTEXT_TOOL --> COMP_DRIVE
+
+    COMP_CAL --> CAL_API
+
+    %% STYLES
+    classDef core fill:#4CAF50,stroke:#2E7D32,stroke-width:3px,color:#fff;
+    classDef agent fill:#00BCD4,stroke:#008BA3,stroke-width:2px,color:#fff;
+    classDef model fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff;
+
+```
+
 ---
 
 ## 🏛️ System Architecture
