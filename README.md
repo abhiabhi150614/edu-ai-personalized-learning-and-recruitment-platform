@@ -482,22 +482,36 @@ sequenceDiagram
 
 ```mermaid
 graph TB
+
     subgraph "AI Function Calling System"
         USER[User Query]
-        CHATBOT[AI Chatbot<br/>Context-Aware]
-        GEMINI[Gemini 2.0 Flash<br/>Function Calling API]
-        
+        CHATBOT[AI Chatbot Context-Aware]
+
+        %% MODEL LAYER
+        OPENAI[OpenAI API Primary]
+        OPENAI_FAIL{OpenAI Failure}
+        GEMINI[Gemini 2.0 Flash Fallback]
+
+        CHATBOT --> OPENAI
+        OPENAI -->|Success| MODEL_OUT
+        OPENAI -.->|Error| OPENAI_FAIL
+        OPENAI_FAIL --> GEMINI
+        GEMINI --> MODEL_OUT
+        MODEL_OUT --> CHATBOT
+
+        %% FUNCTION TOOLS
         subgraph "8 Function Tools"
-            T1[get_drive_notes<br/>Retrieve Notes]
-            T2[update_drive_notes<br/>Save Content]
-            T3[search_youtube_videos<br/>Find Videos]
-            T4[create_youtube_playlist<br/>New Playlist]
-            T5[add_video_to_playlist<br/>Add Video]
-            T6[initiate_call<br/>Voice Call]
-            T7[create_linkedin_post<br/>Social Post]
-            T8[context_query<br/>Learning Position]
+            T1[get_drive_notes Retrieve Notes]
+            T2[update_drive_notes Save Content]
+            T3[search_youtube_videos Find Videos]
+            T4[create_youtube_playlist New Playlist]
+            T5[add_video_to_playlist Add Video]
+            T6[initiate_call Voice Call]
+            T7[create_linkedin_post Social Post]
+            T8[context_query Learning Position]
         end
-        
+
+        %% SERVICE LAYER
         subgraph "Service Integrations"
             DRIVE[Google Drive API]
             YOUTUBE[YouTube Data API]
@@ -505,18 +519,18 @@ graph TB
             TWILIO[Twilio Voice API]
         end
     end
-    
-    USER --> CHATBOT
-    CHATBOT --> GEMINI
-    GEMINI --> T1
-    GEMINI --> T2
-    GEMINI --> T3
-    GEMINI --> T4
-    GEMINI --> T5
-    GEMINI --> T6
-    GEMINI --> T7
-    GEMINI --> T8
-    
+
+    %% MODEL → TOOLS
+    MODEL_OUT --> T1
+    MODEL_OUT --> T2
+    MODEL_OUT --> T3
+    MODEL_OUT --> T4
+    MODEL_OUT --> T5
+    MODEL_OUT --> T6
+    MODEL_OUT --> T7
+    MODEL_OUT --> T8
+
+    %% TOOLS → SERVICES
     T1 --> DRIVE
     T2 --> DRIVE
     T3 --> YOUTUBE
@@ -524,18 +538,22 @@ graph TB
     T5 --> YOUTUBE
     T6 --> TWILIO
     T7 --> LINKEDIN
-    
-    DRIVE --> GEMINI
-    YOUTUBE --> GEMINI
-    LINKEDIN --> GEMINI
-    TWILIO --> GEMINI
-    
-    GEMINI --> CHATBOT
+
+    %% SERVICES → MODEL
+    DRIVE --> MODEL_OUT
+    YOUTUBE --> MODEL_OUT
+    LINKEDIN --> MODEL_OUT
+    TWILIO --> MODEL_OUT
+
+    %% RETURN PATH
     CHATBOT --> USER
-    
+
+    %% COLORS
+    style OPENAI fill:#FF5722,color:#fff
     style GEMINI fill:#4CAF50,color:#fff
     style CHATBOT fill:#2196F3,color:#fff
     style USER fill:#FF9800,color:#fff
+
 ```
 
 ### Recruiter Intelligence Architecture
